@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import React from 'react';
-import {render} from 'ink';
+import { render } from 'ink';
 import meow from 'meow';
 import App from './app.js';
 
@@ -10,20 +10,19 @@ const cli = meow(
 	  $ rsc-pkg
 
 	Options
-		--name  Your name
+		--template  framework you want to use
 
 	Examples
-	  $ rsc-pkg --name=Jane
-	  Hello, Jane
+	  $ rsc-pkg --template=React
 `,
 	{
 		importMeta: import.meta,
 		flags: {
-			name: {
+			template: {
 				type: 'string',
 			},
 		},
 	},
 );
 
-render(<App name={cli.flags.name} />);
+render(<App template={cli.flags.template} packageName={cli.input[0]} />);
