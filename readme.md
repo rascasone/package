@@ -12,14 +12,12 @@ $ npm install --global rsc-pkg
 
 ```
 $ rsc-pkg --help
+	Usage
+	  $ rsc-pkg
 
-  Usage
-    $ rsc-pkg
+	Options
+		--template  framework you want to use
 
-  Options
-    --name  Your name
-
-  Examples
-    $ rsc-pkg --name=Jane
-    Hello, Jane
+	Examples
+	  $ rsc-pkg --template=React
 ```
