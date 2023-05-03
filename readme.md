@@ -21,3 +21,8 @@ $ rsc-pkg --help
 	Examples
 	  $ rsc-pkg --template=React
 ```
+
+
+## TODO
+
+- add test coverage ([ava](https://github.com/avajs/ava) was suggested in the original template)

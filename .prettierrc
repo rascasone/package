@@ -2,6 +2,5 @@
   "singleQuote": false,
   "semi": true,
   "trailingComma": "all",
-  "printWidth": 80,
-  "svelteStrictMode": true
+  "printWidth": 80
 }
