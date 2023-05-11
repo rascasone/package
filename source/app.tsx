@@ -1,19 +1,22 @@
 import React from "react";
 import { Text } from "ink";
-import fs from 'fs'
-import path from 'path';
-import { fileURLToPath } from 'url';
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 type Props = {
 	template: string | undefined;
 	packageName: string | undefined;
 };
 
-const defaultPackageName = "i-have-no-imagination"
+const defaultPackageName = "i-have-no-imagination";
 
 function createPackage(packageName: Props["packageName"] = defaultPackageName) {
-	const templateName = "basic-ts-template"
-	const templatesDir = path.join(path.dirname(fileURLToPath(import.meta.url)), '../templates');
+	const templateName = "basic-ts-template";
+	const templatesDir = path.join(
+		path.dirname(fileURLToPath(import.meta.url)),
+		"../templates",
+	);
 	const templateDir = path.join(templatesDir, templateName);
 
 	try {
@@ -30,18 +33,18 @@ function createPackage(packageName: Props["packageName"] = defaultPackageName) {
 			console.log(err);
 			return;
 		}
-		const packageJson = path.join(packageName, 'package.json');
-		const json = JSON.parse(fs.readFileSync(packageJson, 'utf8'));
-		json.name = packageName
-		fs.writeFileSync(packageJson, JSON.stringify(json, null, 2), 'utf8');
-	})
+		const packageJson = path.join(packageName, "package.json");
+		const json = JSON.parse(fs.readFileSync(packageJson, "utf8"));
+		json.name = packageName;
+		fs.writeFileSync(packageJson, JSON.stringify(json, null, 2), "utf8");
+	});
 }
 
 export default function App({
 	template = "plain Typescript",
 	packageName = defaultPackageName,
 }: Props) {
-	createPackage(packageName)
+	createPackage(packageName);
 	return (
 		<>
 			<Text>
