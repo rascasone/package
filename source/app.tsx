@@ -19,21 +19,23 @@ function createPackage(packageName: Props["packageName"] = defaultPackageName) {
 	);
 	const templateDir = path.join(templatesDir, templateName);
 
+	const packageDir = path.join(process.cwd(), packageName);
+
 	try {
-		if (!fs.existsSync(packageName)) {
-			fs.mkdirSync(packageName);
+		if (!fs.existsSync(packageDir)) {
+			fs.mkdirSync(packageDir);
 		}
 	} catch (err) {
 		console.error(err);
 		return;
 	}
 
-	fs.cp(templateDir, packageName, { recursive: true }, (err) => {
+	fs.cp(templateDir, packageDir, { recursive: true }, (err) => {
 		if (err) {
 			console.log(err);
 			return;
 		}
-		const packageJson = path.join(packageName, "package.json");
+		const packageJson = path.join(packageDir, "package.json");
 		const json = JSON.parse(fs.readFileSync(packageJson, "utf8"));
 		json.name = packageName;
 		fs.writeFileSync(packageJson, JSON.stringify(json, null, 2), "utf8");
