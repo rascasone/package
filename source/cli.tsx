@@ -25,4 +25,9 @@ const cli = meow(
 	},
 );
 
-render(<App template={cli.flags.template} packageName={cli.input[0]} />);
+render(
+	<App
+		defaultTemplate={cli.flags.template}
+		defaultPackageName={cli.input[0]}
+	/>,
+);
