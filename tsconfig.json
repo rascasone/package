@@ -1,15 +1,14 @@
 {
-    "compilerOptions": {
-        "target": "ES2021",
-        "module": "node16",
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "verbatimModuleSyntax": true,
-        "skipLibCheck": true,
-        "sourceMap": true,
-        "strict": true,
-        "outDir": "dist",
-        "baseUrl": ".",
-        "jsx": "react",
-    }
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"sourceMap": true,
+		"strict": true,
+		"outDir": "dist",
+		"baseUrl": ".",
+		"jsx": "react"
+	}
 }
