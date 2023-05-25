@@ -4,11 +4,10 @@
 		"module": "ESNext",
 		"moduleResolution": "node",
 		"esModuleInterop": true,
-		"forceConsistentCasingInFileNames": true,
 		"sourceMap": true,
 		"strict": true,
-		"outDir": "dist",
-		"baseUrl": ".",
 		"jsx": "react"
-	}
+	},
+	"include": ["src"],
+	"exclude": ["node_modules"]
 }
