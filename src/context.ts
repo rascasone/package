@@ -1,11 +1,11 @@
+import type { Dispatch,
+SetStateAction} from "react";
 import {
 	createContext,
-	Dispatch,
-	SetStateAction,
 	useMemo,
 	useState,
 } from "react";
-import { StepIndex } from "./types";
+import type { StepIndex } from "./types.js";
 
 export const AppContext = createContext<{
 	step: StepIndex;

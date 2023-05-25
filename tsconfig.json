@@ -1,12 +1,17 @@
 {
 	"compilerOptions": {
 		"target": "ESNext",
-		"module": "ESNext",
-		"moduleResolution": "node",
-		"esModuleInterop": true,
-		"sourceMap": true,
-		"strict": true,
-		"jsx": "react"
+        "module": "NodeNext",
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "verbatimModuleSyntax": true,
+        "skipLibCheck": true,
+		"moduleResolution": "nodenext",
+        "sourceMap": true,
+        "strict": true,
+        "outDir": "dist",
+        "baseUrl": ".",
+        "jsx": "react",
 	},
 	"include": ["src"],
 	"exclude": ["node_modules"]

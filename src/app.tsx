@@ -1,6 +1,6 @@
 import React from "react";
-import { STEPS } from "./constants";
-import { AppContext, useAppContext } from "./context";
+import { STEPS } from "./constants.js";
+import { AppContext, useAppContext } from "./context.js";
 
 export default function App({
 	templateDefault = "",

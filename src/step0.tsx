@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, Box } from "ink";
-import { TextInput } from "ink-text-input";
+import TextInput from "ink-text-input";
 import { useCallback, useContext } from "react";
-import { AppContext } from "./context";
+import { AppContext } from "./context.js";
 
 export function step0() {
 	const { template, setTemplate, setStep } = useContext(AppContext);
