@@ -1,6 +1,6 @@
 import { access, cp, mkdir, readFile, writeFile } from "fs/promises";
 import { join } from "path";
-import { TEMPLATES_DIR } from "./constants";
+import { TEMPLATES_DIR } from "./constants.js";
 
 export const mkdirIfNotExists = async (path: string) => {
 	try {
