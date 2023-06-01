@@ -8,18 +8,25 @@
 $ npm install --global rsc-pkg
 ```
 
+
+## Development
+
+```bash
+$ npm run dev
+```
+
 ## CLI
 
 ```
 $ rsc-pkg --help
 	Usage
-	  $ rsc-pkg
+	  $ rsc-pkg my-awesome-package
 
 	Options
-		--template  framework you want to use
+		--template framework-you-want-to-use
 
 	Examples
-	  $ rsc-pkg --template=React
+	  $ rsc-pkg my-awesome-package --template=React
 ```
 
 
