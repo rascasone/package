@@ -25,6 +25,7 @@ const cli = meow(
 	},
 );
 
+//TODO: fix template flag not bing passed
 render(
 	<App
 		templateDefault={cli.flags.template || ""}
