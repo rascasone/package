@@ -5,7 +5,7 @@ import { useCallback, useContext } from "react";
 import { AppContext } from "./context.js";
 
 export function Step0() {
-	const { template, setTemplate, setStep } = useContext(AppContext);
+	const { packageName, setPackageName, setStep } = useContext(AppContext);
 	const onSubmit = useCallback((value: string) => {
 		value.length && setStep(1);
 	}, []);
@@ -22,8 +22,8 @@ export function Step0() {
 				</Box>
 
 				<TextInput
-					value={template}
-					onChange={setTemplate}
+					value={packageName}
+					onChange={setPackageName}
 					onSubmit={onSubmit}
 				/>
 			</Box>
