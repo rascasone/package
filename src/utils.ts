@@ -1,4 +1,4 @@
-import { access, cp, mkdir, readFile, writeFile } from "fs/promises";
+import { access, cp, mkdir, readFile, writeFile, readdir } from "fs/promises";
 import { join } from "path";
 import { TEMPLATES_DIR } from "./constants.js";
 
@@ -26,4 +26,19 @@ export const createPackage = async (
 	json.name = packageName;
 
 	await writeFile(packageJson, JSON.stringify(json, null, 2), "utf8");
+};
+
+export const getTemplateNames = async () => {
+	const templates: string[] = [];
+	const files = await readdir(TEMPLATES_DIR, { withFileTypes: true });
+
+	for (let i = 0; i < files.length; ++i) {
+		const file = files[i];
+
+		if (file.isDirectory()) {
+			templates.push(file.name);
+		}
+	}
+
+	return templates;
 };
