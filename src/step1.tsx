@@ -1,7 +1,7 @@
 import React from "react";
 import { Text } from "ink";
 
-export function step1() {
+export function Step1() {
 	return (
 		<>
 			<Text>

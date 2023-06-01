@@ -10,10 +10,11 @@ export default function App({
 	packageDefault: string;
 }) {
 	const value = useAppContext(templateDefault, packageDefault);
+	const Component = STEPS[value.step];
 
 	return (
 		<AppContext.Provider value={value}>
-			{STEPS[value.step]()}
+			<Component />
 		</AppContext.Provider>
 	);
 }
