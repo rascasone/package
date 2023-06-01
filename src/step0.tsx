@@ -4,7 +4,7 @@ import TextInput from "ink-text-input";
 import { useCallback, useContext } from "react";
 import { AppContext } from "./context.js";
 
-export function step0() {
+export function Step0() {
 	const { template, setTemplate, setStep } = useContext(AppContext);
 	const onSubmit = useCallback((value: string) => {
 		value.length && setStep(1);
