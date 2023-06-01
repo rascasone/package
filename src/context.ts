@@ -15,7 +15,7 @@ export const useAppContext = (
 	templateDefault: string,
 	packageDefault: string,
 ) => {
-	const [step, setStep] = useState<StepIndex>(0);
+	const [step, setStep] = useState<StepIndex>(packageDefault === "" ? 0 : 1);
 	const [template, setTemplate] = useState<string>(templateDefault);
 	const [packageName, setPackageName] = useState<string>(packageDefault);
 	const value = useMemo(
