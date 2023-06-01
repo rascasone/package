@@ -2,5 +2,5 @@ import React from "react";
 import { Text } from "ink";
 
 export function Step2() {
-	return <div></div>;
+	return <Text>Hello</Text>;
 }
