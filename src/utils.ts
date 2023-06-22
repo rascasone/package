@@ -1,6 +1,6 @@
 import { access, cp, mkdir, readFile, writeFile, readdir } from "fs/promises";
 import { join } from "path";
-import { TEMPLATES_DIR } from "./constants.js";
+import { SHARED_DIR, TEMPLATES_DIR } from "./constants.js";
 
 export const mkdirIfNotExists = async (path: string) => {
 	try {
@@ -20,6 +20,7 @@ export const createPackage = async (
 
 	await mkdirIfNotExists(packageDir);
 	await cp(templateDir, packageDir, { recursive: true });
+	await cp(SHARED_DIR, packageDir);
 
 	const json = JSON.parse(await readFile(packageJson, "utf8"));
 
@@ -41,4 +42,10 @@ export const getTemplateNames = async () => {
 	}
 
 	return templates;
+};
+
+export const assertKebabCase = (packageName: string) => {
+	if(packageName.toLowerCase() !== packageName) {
+		throw Error(`${packageName} is not a kebab-case`);
+	}
 };

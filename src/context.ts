@@ -5,29 +5,26 @@ import type { StepIndex } from "./types.js";
 export const AppContext = createContext<{
 	step: StepIndex;
 	setStep: Dispatch<SetStateAction<StepIndex>>;
-	template: string;
-	setTemplate: Dispatch<SetStateAction<string>>;
+	templateName: string;
+	setTemplateName: Dispatch<SetStateAction<string>>;
 	packageName: string;
 	setPackageName: Dispatch<SetStateAction<string>>;
 }>({} as never);
 
-export const useAppContext = (
-	templateDefault: string,
-	packageDefault: string,
-) => {
-	const [step, setStep] = useState<StepIndex>(packageDefault === "" ? 0 : 1);
-	const [template, setTemplate] = useState<string>(templateDefault);
-	const [packageName, setPackageName] = useState<string>(packageDefault);
+export const useAppContext = () => {
+	const [step, setStep] = useState<StepIndex>(0);
+	const [templateName, setTemplateName] = useState<string>("");
+	const [packageName, setPackageName] = useState<string>("");
 	const value = useMemo(
 		() => ({
 			step,
 			setStep,
-			template,
-			setTemplate,
+			templateName,
+			setTemplateName,
 			packageName,
 			setPackageName,
 		}),
-		[step, template, packageName],
+		[step, templateName, packageName],
 	);
 
 	return value;
