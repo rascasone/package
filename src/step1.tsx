@@ -1,17 +1,30 @@
-import React, { useContext } from "react";
-import { Text } from "ink";
-import { AppContext } from "./context.js";
+import React, { useCallback, useContext, useEffect, useState } from "react";
+import { Box, Text } from "ink";
+import Select from "ink-select-input";
+import {getTemplateNames} from "./utils.js";
+import {AppContext} from "./context.js";
+
+type Item = { label: string, value: string };
 
 export function Step1() {
-	const { template, packageName } = useContext(AppContext);
+	const { setTemplateName } = useContext(AppContext);
+	const [items, setItems] = useState<Item[]>([]);
+	const onSelect = useCallback(({ value }: Item) => setTemplateName(value), []);
+
+	useEffect(() => {
+		getTemplateNames()
+			.then((names) => setItems(
+				names.map((name) => ({ label: name, value: name }))
+			));
+	}, []);
+
 	return (
-		<>
-			<Text>
-				Hello, it looks like you want to create package named{" "}
-				<Text color="green">{packageName}</Text> using <Text color="green">{template}</Text>
-			</Text>
-			<Text>I created a basic template for you</Text>
-			<Text>Good luck!</Text>
-		</>
+		<Box>
+			<Box marginRight={1}>
+				<Text>⬇️  Select template</Text>
+			</Box>
+
+			<Select items={items} onSelect={onSelect} />
+		</Box>
 	);
 }

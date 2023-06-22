@@ -12,4 +12,3 @@
     "after:bump": "npx auto-changelog -p"
   }
 }
-
