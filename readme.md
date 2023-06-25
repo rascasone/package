@@ -6,13 +6,6 @@
 $ npm install --global rsc-pkg
 ```
 
-
-## Development
-
-```bash
-$ npm run dev
-```
-
 ## CLI
 
 ```
@@ -21,7 +14,12 @@ $ rsc-pkg --help
 	  $ rsc-pkg
 ```
 
-
 ## TODO
 
-- add test coverage ([ava](https://github.com/avajs/ava) was suggested in the original template)
+- [ ] fix runtime require error
+- [ ] make sure variants work
+- [ ] add error handling
+- [ ] add test coverage
+- [ ] clean up the code
+- [ ] add docs
+- [ ] add React template
