@@ -10,7 +10,7 @@ const shared = {
   treeShaking: true,
   outdir: "dist",
   target: ["esnext", "node18.0.0"],
-	external: ["react-devtools-core"]
+  external: ["react-devtools-core"],
 } as BuildOptions;
 
 Promise.all([
@@ -19,5 +19,5 @@ Promise.all([
     format: "esm",
     outExtension: { ".js": ".mjs" },
     splitting: true,
-  })
+  }),
 ]);

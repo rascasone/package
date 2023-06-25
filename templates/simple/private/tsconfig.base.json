@@ -2,14 +2,14 @@
   "compilerOptions": {
     "strict": true,
     "target": "ESNext",
-		"module": "NodeNext",
+    "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "declaration": true,
     "resolveJsonModule": true,
-		"skipLibCheck": true,
-		"sourceMap": true,
-		"forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false
   },
   "exclude": ["node_modules"]

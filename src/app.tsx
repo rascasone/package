@@ -3,11 +3,11 @@ import { AppContext, useAppContext } from "./context.js";
 import Stepper from "./stepper.js";
 
 export default function App() {
-	const value = useAppContext();
+  const value = useAppContext();
 
-	return (
-		<AppContext.Provider value={value}>
-			<Stepper />
-		</AppContext.Provider>
-	);
+  return (
+    <AppContext.Provider value={value}>
+      <Stepper />
+    </AppContext.Provider>
+  );
 }

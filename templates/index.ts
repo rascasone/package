@@ -1,7 +1,9 @@
 import simple from "./simple/index.js";
 
 export const templates = {
-  simple
+  simple,
 };
 
-export const templateNames = Object.keys(templates) as (keyof typeof templates)[];
+export const templateNames = Object.keys(
+  templates,
+) as (keyof typeof templates)[];
