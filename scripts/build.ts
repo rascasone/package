@@ -17,7 +17,7 @@ Promise.all([
   build({
     ...shared,
     format: "esm",
-    outExtension: { ".js": ".mjs.js" },
+    outExtension: { ".js": ".mjs" },
     splitting: true,
   })
 ]);
