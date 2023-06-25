@@ -5,15 +5,13 @@ import meow from "meow";
 import App from "./app.js";
 
 meow(
-	`
+  `
 	Usage
 	  $ rsc-pkg
 	`,
-	{
-		importMeta: import.meta,
-	},
+  {
+    importMeta: import.meta,
+  },
 );
 
-render(
-	<App />,
-);
+render(<App />);

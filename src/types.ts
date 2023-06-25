@@ -9,8 +9,8 @@ export type Nullable<T> = Either<null, T>;
 export type Template<$Variations extends string[]> = {
   variants: () => $Variations;
   create: (props: {
-    packageName: string,
-    templateName: string,
-    variant: $Variations[number]
+    packageName: string;
+    templateName: string;
+    variant: $Variations[number];
   }) => Promise<void>;
 };

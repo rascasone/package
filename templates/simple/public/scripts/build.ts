@@ -15,17 +15,17 @@ const shared: BuildOptions = {
 
 (async () => {
   await Promise.all([
-		build({
-			...shared,
-			format: "cjs",
-			outfile: cjs,
-			target: ["esnext", "node18.0.0"],
-		}),
-		build({
-			...shared,
-			format: "esm",
-			outfile: esm,
-			target: ["esnext", "node18.0.0"],
-		})
-	]);
+    build({
+      ...shared,
+      format: "cjs",
+      outfile: cjs,
+      target: ["esnext", "node18.0.0"],
+    }),
+    build({
+      ...shared,
+      format: "esm",
+      outfile: esm,
+      target: ["esnext", "node18.0.0"],
+    }),
+  ]);
 })();

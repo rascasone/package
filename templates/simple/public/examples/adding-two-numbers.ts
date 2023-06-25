@@ -1,3 +1,3 @@
-import {add} from "../src";
+import { add } from "../src";
 
-add(1, 1);  // 2
+add(1, 1); // 2
