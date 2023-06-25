@@ -25,6 +25,3 @@ $ rsc-pkg --help
 ## TODO
 
 - add test coverage ([ava](https://github.com/avajs/ava) was suggested in the original template)
-- enforce correct naming convention my-awesome-package
-- add default text to fields that user don`t want to fill while creating the package ie. "description"
-- add README to templates
