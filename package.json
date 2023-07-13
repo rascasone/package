@@ -5,9 +5,9 @@
   "bin": "dist/index.mjs",
   "type": "module",
   "scripts": {
-    "build": "node --loader ts-node/esm scripts/build.ts",
+    "build": "node --no-warnings --loader ts-node/esm scripts/build.ts",
     "build:local": "pnpm build && chmod +x dist/index.mjs && npm install -g .",
-    "dev": "node --loader ts-node/esm src/index.tsx",
+    "dev": "node --no-warnings --loader ts-node/esm src/index.tsx",
     "fix:format": "prettier --write \"**/*.{json,js,ts,tsx}\"",
     "fix:lint": "eslint --fix --ext .json,.js,.ts,.tsx .",
     "fix": "pnpm fix:lint && yarn fix:format",
