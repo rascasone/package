@@ -1,7 +1,7 @@
 import { cp } from "fs/promises";
 import { join } from "path";
-import { TEMPLATES_DIR } from "src/constants.js";
-import { createPackage } from "src/utils.js";
+import { TEMPLATES_DIR } from "../../src/constants.js";
+import { createPackage } from "../../src/utils.js";
 import { Template } from "../../src/types.js";
 
 const MAIN = "dist/index.cjs";

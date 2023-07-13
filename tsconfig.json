@@ -10,6 +10,11 @@
     "baseUrl": ".",
     "jsx": "react"
   },
-  "include": ["src", "templates"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src",
+    "templates"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
