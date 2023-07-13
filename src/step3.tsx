@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Box, Text } from "ink";
 import { AppContext } from "./context.js";
-import { templateNames, templates } from "templates/index.js";
+import { templateNames, templates } from "../templates/index.js";
 
 export function Step3() {
   const { templateName, packageName, variantName } = useContext(AppContext);

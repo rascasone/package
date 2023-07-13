@@ -19,5 +19,5 @@ Promise.all([
     format: "esm",
     outExtension: { ".js": ".mjs" },
     splitting: true,
-  }),
+  })
 ]);
