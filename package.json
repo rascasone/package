@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node --loader ts-node/esm scripts/build.ts",
-    "build:local": "pnpm build && chmod +x dist/index.js && npm install -g .",
+    "build:local": "pnpm build && chmod +x dist/index.mjs && npm install -g .",
     "fix:format": "prettier --write \"**/*.{json,js,ts,tsx}\"",
     "fix:lint": "eslint --fix --ext .json,.js,.ts,.tsx .",
     "fix": "pnpm fix:lint && yarn fix:format",
