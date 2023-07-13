@@ -24,6 +24,10 @@ export function Step1() {
         <Text>⬇️ Select template</Text>
       </Box>
 
+
+
+
+
       <Select items={ITEMS} onSelect={onSelect} />
     </Box>
   );
