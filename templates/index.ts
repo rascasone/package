@@ -1,7 +1,7 @@
-import simple from "./simple/index.js";
+import basic from "./basic/index.js";
 
 export const templates = {
-  simple,
+  basic: basic,
 };
 
 export const templateNames = Object.keys(
