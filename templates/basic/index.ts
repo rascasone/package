@@ -9,28 +9,26 @@ const MAIN = "dist/index.cjs";
 const TYPES = "dist/index.d.ts";
 
 const EXPORTS = {
-  exports: {
-    ".": {
-      types: "./dist/index.d.ts",
-      import: "./dist/index.mjs",
-      require: "./dist/index.cjs",
-    },
+  ".": {
+    types: "./dist/index.d.ts",
+    import: "./dist/index.mjs",
+    require: "./dist/index.cjs",
   },
 };
 
 export const FILES = ["dist/*.cjs", "dist/*.mjs", "dist/*.map", "dist/*.ts"];
 
 const SCRIPTS = {
-  "fix:format": 'prettier --write "**/*.{json,mjs,cjs,js,ts}"',
-  "fix:lint": "eslint --fix --ext .json,.mjs,.cjs,.js,.ts .",
+  "fix:format": 'prettier --write "**/*.{json,ts}"',
+  "fix:lint": "eslint --fix --ext .json,.ts .",
   fix: "pnpm fix:lint && pnpm fix:format",
-  "check:format": 'prettier --check "**/*.{json,mjs,cjs,js,ts}"',
-  "check:lint": "eslint --ext .json,.mjs,.cjs,.js,.ts .",
+  "check:format": 'prettier --check "**/*.{json,ts}"',
+  "check:lint": "eslint --ext .json,.ts .",
   check: "pnpm check:lint && pnpm check:format",
   "husky:pre-commit": "pnpm check",
   "husky:pre-push": "pnpm check",
   build:
-    "pnpm clean && ts-node scripts/build.ts && tsc --emitDeclarationOnly --outDir dist",
+    "pnpm clean && node --loader ts-node/esm scripts/build.ts && tsc --emitDeclarationOnly --outDir dist",
   clean: "rm -rf dist",
   prepublishOnly: "pnpm build",
   release: "release-it",

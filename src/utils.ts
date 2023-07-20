@@ -19,7 +19,7 @@ export const createPackage = async (
 
   await mkdirIfNotExists(packageDir);
   await cp(templateDir, packageDir, { recursive: true });
-  await cp(SHARED_DIR, packageDir);
+  await cp(SHARED_DIR, packageDir, { recursive: true });
 
   const json = JSON.parse(await readFile(packageJson, "utf8"));
 
