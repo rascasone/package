@@ -1,2 +1,11 @@
+**/*.log
+**/.DS_Store
+*.
+*.test.tsx
+*.test.ts
+.vscode
+.vscode/settings.json
+.history
 dist
 node_modules
+pnpm-lock.yaml

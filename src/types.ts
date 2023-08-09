@@ -1,10 +1,12 @@
-export type StepIndex = 0 | 1 | 2 | 3;
+import { JSX } from "react";
 
-export type Either<L, R> = L | R;
+export type StepName =
+  | "PackageName"
+  | "SelectTemplate"
+  | "SelectVariant"
+  | "PackageSummary";
 
-export type Maybe<T> = Either<undefined, T>;
-
-export type Nullable<T> = Either<null, T>;
+export type Step = Record<StepName, () => JSX.Element>;
 
 export type Template<$Variations extends string[]> = {
   variants: () => $Variations;
@@ -14,3 +16,5 @@ export type Template<$Variations extends string[]> = {
     variant: $Variations[number];
   }) => Promise<void>;
 };
+
+export type TemplateItem = { label: string; value: string };

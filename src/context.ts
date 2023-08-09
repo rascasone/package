@@ -1,10 +1,10 @@
 import type { Dispatch, SetStateAction } from "react";
 import { createContext, useMemo, useState } from "react";
-import type { StepIndex } from "./types.js";
+import type { StepName } from "./types.js";
 
 export const AppContext = createContext<{
-  step: StepIndex;
-  setStep: Dispatch<SetStateAction<StepIndex>>;
+  step: StepName;
+  setStep: Dispatch<SetStateAction<StepName>>;
   packageName: string;
   setPackageName: Dispatch<SetStateAction<string>>;
   templateName: string;
@@ -14,11 +14,12 @@ export const AppContext = createContext<{
 }>({} as never);
 
 export const useAppContext = () => {
-  const [step, setStep] = useState<StepIndex>(0);
+  const [step, setStep] = useState<StepName>("PackageName");
   const [templateName, setTemplateName] = useState<string>("");
   const [packageName, setPackageName] = useState<string>("");
   const [variantName, setVariantName] = useState<string>("");
-  const value = useMemo(
+
+  return useMemo(
     () => ({
       step,
       setStep,
@@ -31,6 +32,4 @@ export const useAppContext = () => {
     }),
     [step, packageName, templateName, variantName],
   );
-
-  return value;
 };

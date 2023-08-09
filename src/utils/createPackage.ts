@@ -1,14 +1,7 @@
-import { access, cp, mkdir, readFile, writeFile } from "fs/promises";
 import { join } from "path";
-import { SHARED_DIR } from "./constants.js";
-
-export const mkdirIfNotExists = async (path: string) => {
-  try {
-    await access(path);
-  } catch {
-    await mkdir(path);
-  }
-};
+import { cp, readFile, writeFile } from "fs/promises";
+import { SHARED_DIR } from "../constants.js";
+import { mkdirSafe } from "./mkdirSafe.js";
 
 export const createPackage = async (
   templateDir: string,
@@ -17,7 +10,7 @@ export const createPackage = async (
   const packageDir = join(process.cwd(), packageName);
   const packageJson = join(packageDir, "package.json");
 
-  await mkdirIfNotExists(packageDir);
+  await mkdirSafe(packageDir);
   await cp(templateDir, packageDir, { recursive: true });
   await cp(SHARED_DIR, packageDir, { recursive: true });
 
@@ -32,10 +25,4 @@ export const createPackage = async (
     saveJson: () =>
       writeFile(packageJson, JSON.stringify(json, null, 2), "utf8"),
   };
-};
-
-export const assertKebabCase = (packageName: string) => {
-  if (packageName.toLowerCase() !== packageName) {
-    throw Error(`${packageName} is not a kebab-case`);
-  }
 };

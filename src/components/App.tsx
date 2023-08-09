@@ -1,13 +1,13 @@
 import React from "react";
-import { AppContext, useAppContext } from "./context.js";
-import Stepper from "./stepper.js";
+import { AppContext, useAppContext } from "../context.js";
+import Flow from "./Flow.js";
 
 export default function App() {
   const value = useAppContext();
 
   return (
     <AppContext.Provider value={value}>
-      <Stepper />
+      <Flow />
     </AppContext.Provider>
   );
 }
