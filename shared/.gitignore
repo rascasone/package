@@ -1,7 +1,8 @@
-.code
-.idea
-
-node_modules
-dist
-
 .DS_Store
+/dist
+node_modules
+*.local
+*.log
+pnpm-debug.log*
+.vscode/*
+.idea

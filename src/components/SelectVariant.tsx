@@ -1,16 +1,16 @@
 import React, { useCallback, useContext, useMemo } from "react";
 import { Box, Text } from "ink";
 import Select from "ink-select-input";
-import { templateNames, templates } from "../templates/index.js";
-import { AppContext } from "./context.js";
+import { templateNames, templates } from "../../templates/index.js";
+import { AppContext } from "../context.js";
 
 type Item = { label: string; value: string };
 
-export function Step2() {
+export function SelectVariant() {
   const { setVariantName, templateName, setStep } = useContext(AppContext);
   const onSelect = useCallback(({ value }: Item) => {
     setVariantName(value);
-    setStep(3);
+    setStep("PackageSummary");
   }, []);
   const items = useMemo(
     () =>
