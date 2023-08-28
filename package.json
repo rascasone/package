@@ -1,5 +1,5 @@
 {
-  "name": "rasca",
+  "name": "@rascasone/package",
   "version": "0.0.0",
   "license": "MIT",
   "bin": "dist/index.js",
