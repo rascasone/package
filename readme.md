@@ -68,6 +68,6 @@ Before pushing you should run `pnpm fix` to lint and format the code.
 
 ## Contributions
 
-Keep in my that this is mainly a custom tool for Rascasone and not a general use tool aimed at everyone so even though it might be useful for you we might not add a feature that you propose simply because we don't need/use it.
+Keep in mind that this is mainly a custom tool for Rascasone and not a general use tool aimed at everyone so even though it might be useful for you we might not add a feature that you propose simply because we don't need/use it.
 
 So please consult with us first in discussions.
