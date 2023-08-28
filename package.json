@@ -20,6 +20,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  ,
   "dependencies": {
     "ink": "4.3.1",
     "ink-select-input": "5.0.0",
