@@ -18,7 +18,11 @@
     "release": "release-it"
   },
   "files": [
-    "dist"
+    "dist",
+    "templates",
+    "shared",
+    "!templates/index.ts",
+    "!templates/basic/index.ts"
   ],
   "publishConfig": {
     "access": "public"
