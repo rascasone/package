@@ -1,4 +1,4 @@
-# rasca
+# @rascasone/package
 
 > Creating a new package or project is just a few keystrokes away!
 
@@ -11,16 +11,16 @@
 1. Install CLI tool
 
 ```bash
-npm install -g rasca
+npm install -g @rascasone/package
 ```
 
 2. Call CLI tool
 
 ```
-rasca
+package
 ```
 
-Once you call `rasca` it's going to walk you through the whole process which is:
+Once you call `package` it's going to walk you through the whole process which is:
 
 1. Select name
 2. Select template
