@@ -2,10 +2,25 @@
 import React from "react";
 import { render } from "ink";
 import meow from "meow";
-import App from "./components/App.js";
+import New from "./components/New.js";
 
-meow("", {
+const cli = meow(`
+  Usage
+    package new - Create a new package
+    package update - Update a package (TODO)
+`, {
   importMeta: import.meta,
 });
 
-render(<App />);
+const options = {
+  new: () => render(<New />),
+  update: () => console.log("TODO"),
+};
+
+const option = cli.input[0];
+
+if(!(option in options)) {
+  cli.showHelp()
+}
+
+options[option as keyof typeof options]();

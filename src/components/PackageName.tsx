@@ -11,7 +11,7 @@ export function PackageName() {
     [],
   );
   const onSubmit = useCallback(
-    (value: string) => value.length && setStep("SelectTemplate"),
+    (value: string) => value.length && setStep("SelectLanguage"),
     [],
   );
 

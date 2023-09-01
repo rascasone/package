@@ -7,6 +7,8 @@ export const AppContext = createContext<{
   setStep: Dispatch<SetStateAction<StepName>>;
   packageName: string;
   setPackageName: Dispatch<SetStateAction<string>>;
+  languageName: string;
+  setLanguageName: Dispatch<SetStateAction<string>>;
   templateName: string;
   setTemplateName: Dispatch<SetStateAction<string>>;
   variantName: string;
@@ -15,6 +17,7 @@ export const AppContext = createContext<{
 
 export const useAppContext = () => {
   const [step, setStep] = useState<StepName>("PackageName");
+  const [languageName, setLanguageName] = useState<string>("");
   const [templateName, setTemplateName] = useState<string>("");
   const [packageName, setPackageName] = useState<string>("");
   const [variantName, setVariantName] = useState<string>("");
@@ -25,11 +28,13 @@ export const useAppContext = () => {
       setStep,
       packageName,
       setPackageName,
+      languageName,
+      setLanguageName,
       templateName,
       setTemplateName,
       variantName,
       setVariantName,
     }),
-    [step, packageName, templateName, variantName],
+    [step, languageName, packageName, templateName, variantName],
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { AppContext, useAppContext } from "../context.js";
 import Flow from "./Flow.js";
 
-export default function App() {
+export default function New() {
   const value = useAppContext();
 
   return (
