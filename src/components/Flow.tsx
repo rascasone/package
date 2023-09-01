@@ -1,5 +1,4 @@
-import React from "react";
-import { useContext, useMemo } from "react";
+import React, {useContext, useMemo} from "react";
 import { STEPS } from "../constants.js";
 import { AppContext } from "../context.js";
 

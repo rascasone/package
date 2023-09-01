@@ -4,7 +4,7 @@ import { PackageName } from "./components/PackageName.js";
 import { SelectTemplate } from "./components/SelectTemplate.js";
 import { SelectVariant } from "./components/SelectVariant.js";
 import { PackageSummary } from "./components/PackageSummary.js";
-import { templateNames } from "../templates/index.js";
+import { templates } from "../templates/index.js";
 import { TemplateItem, Step } from "./types.js";
 
 export const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -20,7 +20,7 @@ export const STEPS = {
   PackageSummary,
 } satisfies Step;
 
-export const TEMPLATE_ITEMS = templateNames.map((name) => ({
+export const TEMPLATE_ITEMS = Object.keys(templates).map((name) => ({
   label: name,
   value: name,
 })) satisfies TemplateItem[];

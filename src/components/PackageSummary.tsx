@@ -1,19 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import { Box, Text } from "ink";
 import { AppContext } from "../context.js";
-import { templateNames, templates } from "../../templates/index.js";
+import { templates } from "../../templates/index.js";
 
 export function PackageSummary() {
   const { templateName, packageName, variantName } = useContext(AppContext);
 
   useEffect(() => {
-    templates[templateName as (typeof templateNames)[number]]
-      .create({
-        variant: variantName as never,
-        packageName,
-        templateName,
-      })
-      .then();
+    // TODO: call createPackage
+    templates[templateName as (keyof typeof templates)];
   }, []);
 
   return (

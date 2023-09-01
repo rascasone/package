@@ -1,7 +1,7 @@
 import React, { useCallback, useContext, useMemo } from "react";
 import { Box, Text } from "ink";
 import Select from "ink-select-input";
-import { templateNames, templates } from "../../templates/index.js";
+import { templates } from "../../templates/index.js";
 import { AppContext } from "../context.js";
 
 type Item = { label: string; value: string };
@@ -14,8 +14,7 @@ export function SelectVariant() {
   }, []);
   const items = useMemo(
     () =>
-      templates[templateName as (typeof templateNames)[number]]
-        .variants()
+      templates[templateName as (keyof typeof templates)]
         .map((v) => ({ label: v, value: v })),
     [templateName],
   );

@@ -1,0 +1,24 @@
+{
+  "description": "{DESCRIPTION}",
+  "repository": {
+    "type": "git",
+    "url": "{URL}",
+    "directory": "src"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "{URL}/issues"
+  },
+  "homepage": "{URL}",
+  "scripts": {
+    "husky:pre-commit": "pnpm check",
+    "husky:pre-push": "pnpm check",
+    "prepublishOnly": "pnpm build",
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "release-it": "15.11.0",
+    "husky": "8.0.3",
+    "@release-it/keep-a-changelog": "3.1.0"
+  }
+}

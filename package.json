@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsup src/index.tsx --format esm",
     "build:local": "pnpm build && chmod +x dist/index.js && npm install -g .",
-    "dev": "node --no-warnings --loader ts-node/esm src/index.tsx",
+    "dev": "tsx src/index.tsx",
     "fix:format": "prettier --write \"**/*.{json,js,ts,tsx}\"",
     "fix:lint": "eslint --fix --ext .json,.js,.ts,.tsx .",
     "fix": "pnpm fix:lint && yarn fix:format",
@@ -15,14 +15,14 @@
     "check:lint": "eslint --ext .json,.js,.ts,.tsx .",
     "husky:pre-commit": "pnpm check:lint && pnpm check:format",
     "husky:pre-push": "pnpm check:lint && pnpm check:format",
-    "release": "release-it"
+    "release": "release-it",
+    "generate:templates": "tsx scripts/templates.ts"
   },
   "files": [
     "dist",
     "templates",
     "shared",
-    "!templates/index.ts",
-    "!templates/basic/index.ts"
+    "!templates/index.ts"
   ],
   "publishConfig": {
     "access": "public"
@@ -48,11 +48,35 @@
     "husky": "8.0.3",
     "prettier": "3.0.2",
     "release-it": "16.1.5",
-    "ts-node": "10.9.1",
     "tsup": "7.2.0",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "tsx": "3.12.7"
   },
-  "engines": {
-    "node": ">=20.0.0"
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "browser": true,
+      "es2022": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ]
+  },
+  "prettier": {
+    "singleQuote": false,
+    "semi": true,
+    "trailingComma": "all",
+    "printWidth": 80
   }
 }

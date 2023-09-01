@@ -1,7 +1,6 @@
-import React from "react";
-import { Text, Box } from "ink";
+import React, {useCallback, useContext} from "react";
+import {Text, Box} from "ink";
 import TextInput from "ink-text-input";
-import { useCallback, useContext } from "react";
 import { AppContext } from "../context.js";
 import { toKebabCase } from "../utils/index.js";
 

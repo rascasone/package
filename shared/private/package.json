@@ -1,0 +1,22 @@
+{
+  "license": "MIT",
+  "type": "module",
+  "version": "0.0.0",
+  "name": "{NAME}",
+  "scripts": {
+    "fix:format": "prettier --write \"**/*.{json,ts,svelte,vue,tsx}\"",
+    "fix:lint": "eslint --fix --ext .json,.ts,.svelte,.vue,.tsx .",
+    "fix": "pnpm fix:lint && pnpm fix:format",
+    "check:format": "prettier --check \"**/*.{json,ts,svelte,vue,tsx}\"",
+    "check:lint": "eslint --ext .json,.ts,.svelte,.vue,.tsx .",
+    "check": "pnpm check:lint && pnpm check:format"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.5.0",
+    "@typescript-eslint/parser": "6.5.0",
+    "eslint": "8.48.0",
+    "eslint-config-prettier": "9.0.0",
+    "prettier": "3.0.3",
+    "typescript": "5.2.2"
+  },
+}
