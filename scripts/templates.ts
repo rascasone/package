@@ -1,10 +1,7 @@
 import { readdir, writeFile } from "node:fs/promises";
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
-
-export const ROOT = dirname(fileURLToPath(import.meta.url));
-
-export const TEMPLATES_DIR = join(ROOT, "../templates");
+import { join } from "path";
+import { toJSON } from "../src/utils/index.js";
+import { TEMPLATES_DIR } from "../src/constants.js";
 
 (async () => {
   const dirs = await readdir(TEMPLATES_DIR, { withFileTypes: true });
@@ -26,6 +23,8 @@ export const TEMPLATES_DIR = join(ROOT, "../templates");
 
   await writeFile(
     join(TEMPLATES_DIR, "index.ts"),
-    `export const templates = ${JSON.stringify(languages, null, 2)} as const;`,
+    `// generated with "pnpm generate:templates"\nexport const templates = ${toJSON(
+      languages,
+    )} as const;`,
   );
 })();
