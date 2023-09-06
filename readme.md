@@ -38,7 +38,7 @@ Once you call `package new` it's going to walk you through the whole process whi
 
 You need to install `pnpm` and run `pnpm install`.
 
-To locally test the CLI tool you should run `pnpm build:local` which automatically installs `rasca` as a global package.
+To locally test the CLI tool you should run `pnpm build:local` which automatically installs `package` as a global package.
 
 You can also run `pnpm dev` which automatically re-builds and re-runs the CLI tool on every change.
 
