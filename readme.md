@@ -17,21 +17,22 @@ npm install -g @rascasone/package
 2. Call CLI tool
 
 ```
-package
+package new
 ```
 
-Once you call `package` it's going to walk you through the whole process which is:
+Once you call `package new` it's going to walk you through the whole process which is:
 
 1. Select name
-2. Select template
-3. Select variant
-4. Done
+2. Select language
+3. Select template
+4. Select variant
+5. Done
 
 ## Motivation
 
-- We work on very diverse projects so we end up working with a lot of different stacks
+- We work on very diverse projects, so we end up working with a lot of different stacks
 - We used to spend a lot of time configuring the stacks before we could start working
-- We had no way of enforcing standarts and configurations (ESLint/Prettier/etc.)
+- We had no way of enforcing standards and configurations (ESLint/Prettier/etc.)
 
 ## Development
 
@@ -47,23 +48,19 @@ Before pushing you should run `pnpm fix` to lint and format the code.
 
 ### Road to v1
 
-- [ ] Move template generation to `rasca new`
 - [ ] Check if package already exists in the first step
 - [ ] Better error handling
 - [ ] More informative instructions after package has been created
 - [ ] Add CLI props so we can copy paste different config commands
 - [ ] Add Github CI/CD actions for public variants
-- [ ] Add CommitLint
 - [ ] Make variants support different tech configurations (e.g. React + CSS modules/Tailwind/CSS-in-JS)
 - [ ] Add update/migrate feature to keep old generated packages up to date with changes made in the source code of the templates used for generating the packages
-- [ ] Support non-JS/TS templates (mainly Ruby on Rails)
 - [ ] Tests
 
 ### Can be done any time
 
 - [ ] Add more templates
   - [ ] Turborepo
-  - [ ] SvelteKit
   - [ ] Cloudflare Workers
 
 ## Contributions
