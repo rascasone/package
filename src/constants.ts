@@ -1,6 +1,8 @@
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
+export const HERE = process.cwd();
+
 export const ROOT = dirname(fileURLToPath(import.meta.url));
 
 export const TEMPLATES_DIR = join(ROOT, "../templates");
