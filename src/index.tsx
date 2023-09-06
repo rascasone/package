@@ -1,26 +1,27 @@
 #!/usr/bin/env node
 import React from "react";
-import { render } from "ink";
 import meow from "meow";
-import New from "./components/New.js";
+import { render } from "ink";
+import New from "./flows/new/New.js";
 
-const cli = meow(`
-  Usage
-    package new - Create a new package
-    package update - Update a package (TODO)
-`, {
-  importMeta: import.meta,
-});
+const cli = meow(
+  `
+Usage
+  package new - Create a new package
+  `,
+  {
+    importMeta: import.meta,
+  },
+);
 
-const options = {
-  new: () => render(<New />),
-  update: () => console.log("TODO"),
+export const flows = {
+  new: () => <New />,
 };
 
 const option = cli.input[0];
 
-if(!(option in options)) {
-  cli.showHelp()
+if (option === "" || !(option in flows)) {
+  cli.showHelp();
 }
 
-options[option as keyof typeof options]();
+render(flows[option as keyof typeof flows]());

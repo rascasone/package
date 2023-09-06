@@ -15,8 +15,7 @@
     "dist/*.ts"
   ],
   "scripts": {
-    "build":
-      "pnpm clean && tsx scripts/build.ts && tsc --emitDeclarationOnly --outDir dist",
+    "build": "pnpm clean && tsx scripts/build.ts && tsc --emitDeclarationOnly --outDir dist",
     "clean": "rm -rf dist"
   },
   "devDependencies": {
