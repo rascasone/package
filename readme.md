@@ -48,8 +48,6 @@ Before pushing you should run `pnpm fix` to lint and format the code.
 
 ### Road to v1
 
-- [ ] Check if package already exists in the first step
-- [ ] Better error handling
 - [ ] More informative instructions after package has been created
 - [ ] Add CLI props so we can copy paste different config commands
 - [ ] Add Github CI/CD actions for public variants

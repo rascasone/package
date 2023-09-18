@@ -2,7 +2,7 @@
 import React from "react";
 import meow from "meow";
 import { render } from "ink";
-import New from "./flows/new/New.js";
+import New from "./commands/new/New.js";
 
 const cli = meow(
   `

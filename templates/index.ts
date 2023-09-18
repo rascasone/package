@@ -1,4 +1,4 @@
-// this was generated with "pnpm generate:templates"
+// generated with "pnpm generate:templates"
 export const templates = {
   "typescript": {
     "basic": [
